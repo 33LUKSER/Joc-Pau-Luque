@@ -33,8 +33,9 @@ func _process(delta):
 
 func _punt_tocat(body):
 	punts += 1
-	
+	$Label2.text = "Count: %d" % [punts]
 
 
 func _on_count_renamed():
 	pass # Replace with function body.
+

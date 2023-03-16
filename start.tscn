@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Fonts/Kenney Mini Square Mono.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://textuea per les pareds  totes.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 63.5, 37.5 )
@@ -15,10 +16,10 @@ font_data = ExtResource( 1 )
 position = Vector2( 65.5, 37.5 )
 shape = SubResource( 1 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 129.0
-margin_bottom = 79.0
-color = Color( 0.00784314, 0.0431373, 0.956863, 1 )
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 63.5, 40.5 )
+scale = Vector2( 0.565385, 0.601266 )
+texture = ExtResource( 2 )
 
 [node name="START" type="Label" parent="."]
 margin_left = 5.0
