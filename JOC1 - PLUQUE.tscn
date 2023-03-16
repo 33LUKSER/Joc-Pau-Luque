@@ -1,0 +1,144 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://PERSONATGE.gd" type="Script" id=1]
+[ext_resource path="res://PERSONATGE.tscn" type="PackedScene" id=2]
+[ext_resource path="res://start.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Paret.tscn" type="PackedScene" id=4]
+[ext_resource path="res://detector.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Fonts/ceilooooo.jpg" type="Texture" id=6]
+[ext_resource path="res://FINISH.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Fonts/Kenney Mini Square Mono.ttf" type="DynamicFontData" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 70
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 8 )
+
+[node name="joc1 luque" type="Node2D"]
+__meta__ = {
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 2213.5, 57.0001 )
+scale = Vector2( 3.05052, 2.33704 )
+texture = ExtResource( 6 )
+
+[node name="Personatge" parent="." instance=ExtResource( 2 )]
+position = Vector2( 153, 110 )
+script = ExtResource( 1 )
+
+[node name="detector" parent="." instance=ExtResource( 5 )]
+position = Vector2( 678, 436 )
+
+[node name="start" parent="." instance=ExtResource( 3 )]
+position = Vector2( -1, 211 )
+
+[node name="Paret" parent="." instance=ExtResource( 4 )]
+position = Vector2( 231, 254 )
+
+[node name="Paret2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 426, 240 )
+
+[node name="Paret3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 678, 177 )
+
+[node name="Paret4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 794, 493 )
+
+[node name="Paret5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 592, 568 )
+
+[node name="Paret6" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1010, 441 )
+
+[node name="Paret7" parent="." instance=ExtResource( 4 )]
+position = Vector2( 904, 115 )
+
+[node name="Paret8" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1102, 26 )
+
+[node name="Paret9" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1284, 432 )
+
+[node name="Paret10" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1585, 415 )
+
+[node name="Paret11" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1246, 130 )
+
+[node name="detector2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1512, 319 )
+
+[node name="Paret12" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1778, 282 )
+
+[node name="Paret13" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1975, 185 )
+
+[node name="Paret14" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2156, 103 )
+
+[node name="Paret15" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2464, 200 )
+
+[node name="Paret16" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2597, 342 )
+
+[node name="Paret17" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2982, 309 )
+
+[node name="detector3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 2997, 240 )
+
+[node name="Paret18" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3256, 232 )
+
+[node name="Paret19" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3184, -39 )
+
+[node name="Paret20" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3484, 91 )
+
+[node name="Paret21" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3481, -180 )
+
+[node name="Paret22" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3198, -309 )
+
+[node name="Paret23" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3473, -454 )
+
+[node name="detector4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 3521, -555 )
+
+[node name="Paret24" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3520, -454 )
+
+[node name="Paret25" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3570, -454 )
+
+[node name="StaticBody2D" parent="." instance=ExtResource( 7 )]
+position = Vector2( 4111, 660 )
+
+[node name="JUMP" type="Label" parent="."]
+margin_left = 3669.0
+margin_top = -648.0
+margin_right = 3998.0
+margin_bottom = -540.0
+rect_rotation = 9.7
+custom_fonts/font = SubResource( 1 )
+text = "JUMP!"
+align = 1
+
+[node name="Label" type="Label" parent="."]
+margin_left = 4226.0
+margin_top = -289.0
+margin_right = 5233.0
+margin_bottom = -88.0001
+rect_rotation = 58.4
+custom_fonts/font = SubResource( 2 )
+text = "AAAAAAAAAAAAAAAAAH!"
