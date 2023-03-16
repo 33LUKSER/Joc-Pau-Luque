@@ -5,11 +5,11 @@
 [ext_resource path="res://start.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Paret.tscn" type="PackedScene" id=4]
 [ext_resource path="res://detector.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Fonts/ceilooooo.jpg" type="Texture" id=6]
+[ext_resource path="res://lejano oeste fondo.jpg" type="Texture" id=6]
 [ext_resource path="res://FINISH.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Fonts/Kenney Mini Square Mono.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://limit.tscn" type="PackedScene" id=9]
-[ext_resource path="res://limitssssssssss.tscn" type="PackedScene" id=10]
+[ext_resource path="res://terra limit.tscn" type="PackedScene" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 70
@@ -20,14 +20,10 @@ size = 50
 font_data = ExtResource( 8 )
 
 [node name="joc1 luque" type="Node2D"]
+position = Vector2( 215, 51 )
 __meta__ = {
 "_edit_vertical_guides_": [  ]
 }
-
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 2207.5, 6.99998 )
-scale = Vector2( 3.07031, 2.46852 )
-texture = ExtResource( 6 )
 
 [node name="Personatge" parent="." instance=ExtResource( 2 )]
 position = Vector2( 153, 110 )
@@ -58,8 +54,8 @@ rect_rotation = 58.4
 custom_fonts/font = SubResource( 2 )
 text = "AAAAAAAAAAAAAAAAAH!"
 
-[node name="StaticBody2D2" parent="." instance=ExtResource( 9 )]
-position = Vector2( 4112, 1674 )
+[node name="TERRA LIMIT" parent="." instance=ExtResource( 9 )]
+position = Vector2( 4126, 1568 )
 
 [node name="Estrelles" type="Node2D" parent="."]
 
@@ -152,8 +148,24 @@ position = Vector2( 3520, -454 )
 [node name="Paret25" parent="Parets" instance=ExtResource( 4 )]
 position = Vector2( 3570, -454 )
 
-[node name="Area2D" parent="." instance=ExtResource( 10 )]
-position = Vector2( -746, 0 )
+[node name="pared limit" parent="." instance=ExtResource( 10 )]
+position = Vector2( -161, -487 )
+
+[node name="pared limit 2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 4591, -482 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+position = Vector2( 215, 51 )
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 583, 193 )
+scale = Vector2( 3.61969, 4.96949 )
+texture = ExtResource( 6 )
 
 [connection signal="body_entered" from="Estrelles/detector" to="Personatge" method="_punt_tocat"]
 [connection signal="body_entered" from="Estrelles/detector2" to="Personatge" method="_punt_tocat"]
