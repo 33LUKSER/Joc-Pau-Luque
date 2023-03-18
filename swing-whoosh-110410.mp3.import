@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/swing-whoosh-110410.mp3-4e70653fa0f602ce0a334773299ec129.mp3str"
+
+[deps]
+
+source_file="res://swing-whoosh-110410.mp3"
+dest_files=[ "res://.import/swing-whoosh-110410.mp3-4e70653fa0f602ce0a334773299ec129.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

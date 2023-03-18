@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://PERSONATGE.gd" type="Script" id=1]
 [ext_resource path="res://PERSONATGE.tscn" type="PackedScene" id=2]
@@ -9,7 +9,10 @@
 [ext_resource path="res://FINISH.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Fonts/Kenney Mini Square Mono.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://limit.tscn" type="PackedScene" id=9]
-[ext_resource path="res://terra limit.tscn" type="PackedScene" id=10]
+[ext_resource path="res://sueloteleport.tscn" type="PackedScene" id=10]
+[ext_resource path="res://fondo arribaa.tscn" type="PackedScene" id=11]
+[ext_resource path="res://limit.gd" type="Script" id=12]
+[ext_resource path="res://dark-country-rock-144-138300.mp3" type="AudioStream" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 size = 70
@@ -19,18 +22,49 @@ font_data = ExtResource( 8 )
 size = 50
 font_data = ExtResource( 8 )
 
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 398.5, 1184.5 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 215.5, 958 )
+
 [node name="joc1 luque" type="Node2D"]
 position = Vector2( 215, 51 )
 __meta__ = {
 "_edit_vertical_guides_": [  ]
 }
 
+[node name="Position2D" type="Position2D" parent="."]
+visible = false
+position = Vector2( 407, 114 )
+
+[node name="ColorRect" parent="." instance=ExtResource( 11 )]
+margin_left = -835.0
+margin_top = -2049.0
+margin_right = 5566.0
+margin_bottom = -526.0
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 238, 204 )
+scale = Vector2( 3.61969, 4.96949 )
+texture = ExtResource( 6 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 2370, 204 )
+scale = Vector2( 3.61969, 4.96949 )
+texture = ExtResource( 6 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 4500, 203 )
+scale = Vector2( 3.61969, 4.96949 )
+texture = ExtResource( 6 )
+
 [node name="Personatge" parent="." instance=ExtResource( 2 )]
-position = Vector2( 153, 110 )
+position = Vector2( 84, 171 )
 script = ExtResource( 1 )
 
 [node name="start" parent="." instance=ExtResource( 3 )]
-position = Vector2( -1, 211 )
+position = Vector2( 8, 214 )
 
 [node name="StaticBody2D" parent="." instance=ExtResource( 7 )]
 position = Vector2( 4111, 660 )
@@ -53,9 +87,6 @@ margin_bottom = -88.0001
 rect_rotation = 58.4
 custom_fonts/font = SubResource( 2 )
 text = "AAAAAAAAAAAAAAAAAH!"
-
-[node name="TERRA LIMIT" parent="." instance=ExtResource( 9 )]
-position = Vector2( 4126, 1568 )
 
 [node name="Estrelles" type="Node2D" parent="."]
 
@@ -148,26 +179,43 @@ position = Vector2( 3520, -454 )
 [node name="Paret25" parent="Parets" instance=ExtResource( 4 )]
 position = Vector2( 3570, -454 )
 
-[node name="pared limit" parent="." instance=ExtResource( 10 )]
-position = Vector2( -161, -487 )
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = -855.0
+margin_top = 928.0
+margin_right = 5556.0
+margin_bottom = 1405.0
+color = Color( 0.992157, 0.266667, 0.0862745, 1 )
 
-[node name="pared limit 2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 4591, -482 )
+[node name="TERRA LIMIT" parent="." instance=ExtResource( 9 )]
+visible = false
+position = Vector2( 4138, 1468 )
+script = ExtResource( 12 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Area2D" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1445, 929 )
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
-scroll_ignore_camera_zoom = true
+[node name="paredd2" type="StaticBody2D" parent="."]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
-position = Vector2( 215, 51 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paredd2"]
+position = Vector2( 5273.5, -264.5 )
+shape = SubResource( 4 )
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
-position = Vector2( 583, 193 )
-scale = Vector2( 3.61969, 4.96949 )
-texture = ExtResource( 6 )
+[node name="paredd" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paredd"]
+position = Vector2( -248.5, -29 )
+shape = SubResource( 3 )
+
+[node name="musica fondo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+autoplay = true
+
+[node name="efectos de sonido" type="Node" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="body_entered" from="Estrelles/detector" to="Personatge" method="_punt_tocat"]
 [connection signal="body_entered" from="Estrelles/detector2" to="Personatge" method="_punt_tocat"]
 [connection signal="body_entered" from="Estrelles/detector3" to="Personatge" method="_punt_tocat"]
 [connection signal="body_entered" from="Estrelles/detector4" to="Personatge" method="_punt_tocat"]
+[connection signal="body_exited" from="Area2D" to="Personatge" method="_on_Area2D_body_exited"]
