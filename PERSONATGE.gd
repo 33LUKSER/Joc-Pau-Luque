@@ -41,7 +41,9 @@ func _punt_tocat(body):
 	punts += 1
 	$Label2.text = "Count: %d" % [punts]
 
-
+func playSound(sound):
+	if sound == "pickup":
+		get_node("/root/coin/pickup").play()
 		
 
 

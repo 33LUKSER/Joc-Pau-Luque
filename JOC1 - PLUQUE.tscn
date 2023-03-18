@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://PERSONATGE.gd" type="Script" id=1]
 [ext_resource path="res://PERSONATGE.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://fondo arribaa.tscn" type="PackedScene" id=11]
 [ext_resource path="res://limit.gd" type="Script" id=12]
 [ext_resource path="res://dark-country-rock-144-138300.mp3" type="AudioStream" id=13]
+[ext_resource path="res://pickup.tscn" type="PackedScene" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 size = 70
@@ -59,7 +60,7 @@ position = Vector2( 4500, 203 )
 scale = Vector2( 3.61969, 4.96949 )
 texture = ExtResource( 6 )
 
-[node name="Personatge" parent="." instance=ExtResource( 2 )]
+[node name="Personatge" parent="." groups=["personatge"] instance=ExtResource( 2 )]
 position = Vector2( 84, 171 )
 script = ExtResource( 1 )
 
@@ -210,9 +211,9 @@ shape = SubResource( 3 )
 stream = ExtResource( 13 )
 autoplay = true
 
-[node name="efectos de sonido" type="Node" parent="."]
+[node name="coin" type="Node" parent="."]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="pickup" parent="coin" instance=ExtResource( 14 )]
 
 [connection signal="body_entered" from="Estrelles/detector" to="Personatge" method="_punt_tocat"]
 [connection signal="body_entered" from="Estrelles/detector2" to="Personatge" method="_punt_tocat"]
