@@ -8,6 +8,7 @@ var salt := 400
 var punts := 0
 var position_de_plataforma = Vector2(300,150)
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 #	position = Vector2(0,0)
@@ -17,6 +18,8 @@ func _ready():
 func _process(delta):
 	moviment.x = 0
 	direccio.x = 0
+	if Input.is_action_pressed("reset"):
+		get_tree().reload_current_scene()
 	if Input.is_action_pressed("ves_dreta"):
 		direccio += Vector2.RIGHT
 		$Label.text = "DRETA"
@@ -49,3 +52,10 @@ func playSound(sound):
 
 func _on_Area2D_body_exited(body):
 	body.global_position = position_de_plataforma
+
+
+
+
+
+func _on_Area2D2_body_exited(body):
+	get_tree().change_scene("res://theendscene.tscn")

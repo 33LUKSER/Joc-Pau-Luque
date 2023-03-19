@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://PERSONATGE.gd" type="Script" id=1]
 [ext_resource path="res://PERSONATGE.tscn" type="PackedScene" id=2]
@@ -12,8 +12,8 @@
 [ext_resource path="res://sueloteleport.tscn" type="PackedScene" id=10]
 [ext_resource path="res://fondo arribaa.tscn" type="PackedScene" id=11]
 [ext_resource path="res://limit.gd" type="Script" id=12]
-[ext_resource path="res://dark-country-rock-144-138300.mp3" type="AudioStream" id=13]
-[ext_resource path="res://pickup.tscn" type="PackedScene" id=14]
+[ext_resource path="res://musica fondo.tscn" type="PackedScene" id=13]
+[ext_resource path="res://theendsare.tscn" type="PackedScene" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 size = 70
@@ -21,6 +21,10 @@ font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 50
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 30
 font_data = ExtResource( 8 )
 
 [sub_resource type="RectangleShape2D" id=4]
@@ -40,10 +44,10 @@ visible = false
 position = Vector2( 407, 114 )
 
 [node name="ColorRect" parent="." instance=ExtResource( 11 )]
-margin_left = -835.0
-margin_top = -2049.0
-margin_right = 5566.0
-margin_bottom = -526.0
+margin_left = -859.0
+margin_top = -2050.0
+margin_right = 9788.0
+margin_bottom = -527.0
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 238, 204 )
@@ -60,6 +64,16 @@ position = Vector2( 4500, 203 )
 scale = Vector2( 3.61969, 4.96949 )
 texture = ExtResource( 6 )
 
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 6630, 202 )
+scale = Vector2( 3.61969, 4.96949 )
+texture = ExtResource( 6 )
+
+[node name="Sprite5" type="Sprite" parent="."]
+position = Vector2( 8761, 206 )
+scale = Vector2( 3.61969, 4.96949 )
+texture = ExtResource( 6 )
+
 [node name="Personatge" parent="." groups=["personatge"] instance=ExtResource( 2 )]
 position = Vector2( 84, 171 )
 script = ExtResource( 1 )
@@ -67,24 +81,24 @@ script = ExtResource( 1 )
 [node name="start" parent="." instance=ExtResource( 3 )]
 position = Vector2( 8, 214 )
 
-[node name="StaticBody2D" parent="." instance=ExtResource( 7 )]
-position = Vector2( 4111, 660 )
+[node name="theend" parent="." instance=ExtResource( 7 )]
+position = Vector2( 8667, 537 )
 
 [node name="JUMP" type="Label" parent="."]
-margin_left = 3669.0
-margin_top = -648.0
-margin_right = 3998.0
-margin_bottom = -540.0
+margin_left = 8119.0
+margin_top = -683.0
+margin_right = 8448.0
+margin_bottom = -575.0
 rect_rotation = 9.7
 custom_fonts/font = SubResource( 1 )
 text = "JUMP!"
 align = 1
 
 [node name="Label" type="Label" parent="."]
-margin_left = 4226.0
-margin_top = -289.0
-margin_right = 5233.0
-margin_bottom = -88.0001
+margin_left = 8612.0
+margin_top = -460.0
+margin_right = 9619.0
+margin_bottom = -259.0
 rect_rotation = 58.4
 custom_fonts/font = SubResource( 2 )
 text = "AAAAAAAAAAAAAAAAAH!"
@@ -102,6 +116,24 @@ position = Vector2( 2997, 240 )
 
 [node name="detector4" parent="Estrelles" instance=ExtResource( 5 )]
 position = Vector2( 3521, -555 )
+
+[node name="detector5" parent="Estrelles" instance=ExtResource( 5 )]
+position = Vector2( 5203, -765 )
+
+[node name="detector6" parent="Estrelles" instance=ExtResource( 5 )]
+position = Vector2( 6290, -786 )
+
+[node name="detector7" parent="Estrelles" instance=ExtResource( 5 )]
+position = Vector2( 6857, -647 )
+
+[node name="detector8" parent="Estrelles" instance=ExtResource( 5 )]
+position = Vector2( 8139, -531 )
+
+[node name="detector9" parent="Estrelles" instance=ExtResource( 5 )]
+position = Vector2( 8535, -107 )
+
+[node name="detector10" parent="Estrelles" instance=ExtResource( 5 )]
+position = Vector2( 4162, -342 )
 
 [node name="Parets" type="Node2D" parent="."]
 
@@ -175,15 +207,103 @@ position = Vector2( 3198, -309 )
 position = Vector2( 3473, -454 )
 
 [node name="Paret24" parent="Parets" instance=ExtResource( 4 )]
-position = Vector2( 3520, -454 )
+position = Vector2( 3871, -360 )
 
 [node name="Paret25" parent="Parets" instance=ExtResource( 4 )]
 position = Vector2( 3570, -454 )
 
+[node name="Paret26" parent="Parets" instance=ExtResource( 4 )]
+position = Vector2( 4180, -182 )
+
+[node name="Paret27" parent="Parets" instance=ExtResource( 4 )]
+position = Vector2( 4446, -294 )
+
+[node name="Paret28" parent="Parets" instance=ExtResource( 4 )]
+position = Vector2( 4467, -38 )
+
+[node name="Paret29" parent="Parets" instance=ExtResource( 4 )]
+position = Vector2( 4718, 142 )
+
+[node name="Paret30" parent="Parets" instance=ExtResource( 4 )]
+position = Vector2( 4718, -378 )
+
+[node name="Paret31" parent="Parets" instance=ExtResource( 4 )]
+position = Vector2( 4859, 282 )
+
+[node name="Paret32" parent="Parets" instance=ExtResource( 4 )]
+position = Vector2( 5149, 229 )
+
+[node name="Paret33" parent="Parets" instance=ExtResource( 4 )]
+position = Vector2( 5472, 312 )
+
+[node name="Paret34" parent="Parets" instance=ExtResource( 4 )]
+position = Vector2( 5780, 409 )
+
+[node name="Paret35" parent="Parets" instance=ExtResource( 4 )]
+position = Vector2( 6119, 445 )
+
+[node name="Paret36" parent="Parets" instance=ExtResource( 4 )]
+position = Vector2( 6469, 456 )
+
+[node name="Paret37" parent="Parets" instance=ExtResource( 4 )]
+position = Vector2( 6725, 356 )
+
+[node name="Label" type="Label" parent="Parets/Paret37"]
+margin_left = 55.0
+margin_top = -118.0
+margin_right = 193.0
+margin_bottom = -39.0
+rect_rotation = 19.8
+custom_fonts/font = SubResource( 5 )
+text = "Oopsss
+"
+
+[node name="Paret38" parent="Parets" instance=ExtResource( 4 )]
+position = Vector2( 4940, -516 )
+
+[node name="Paret39" parent="Parets" instance=ExtResource( 4 )]
+position = Vector2( 5127, -669 )
+
+[node name="Paret40" parent="Parets" instance=ExtResource( 4 )]
+position = Vector2( 5127, -669 )
+
+[node name="Paret41" parent="Parets" instance=ExtResource( 4 )]
+position = Vector2( 5265, -639 )
+
+[node name="Paret42" parent="Parets" instance=ExtResource( 4 )]
+position = Vector2( 5570, -617 )
+
+[node name="Paret43" parent="Parets" instance=ExtResource( 4 )]
+position = Vector2( 5833, -688 )
+
+[node name="Paret44" parent="Parets" instance=ExtResource( 4 )]
+position = Vector2( 6109, -733 )
+
+[node name="Paret45" parent="Parets" instance=ExtResource( 4 )]
+position = Vector2( 6404, -516 )
+
+[node name="Paret46" parent="Parets" instance=ExtResource( 4 )]
+position = Vector2( 6697, -529 )
+
+[node name="Paret47" parent="Parets" instance=ExtResource( 4 )]
+position = Vector2( 7004, -517 )
+
+[node name="Paret48" parent="Parets" instance=ExtResource( 4 )]
+position = Vector2( 7263, -548 )
+
+[node name="Paret49" parent="Parets" instance=ExtResource( 4 )]
+position = Vector2( 7573, -504 )
+
+[node name="Paret50" parent="Parets" instance=ExtResource( 4 )]
+position = Vector2( 7837, -519 )
+
+[node name="Paret51" parent="Parets" instance=ExtResource( 4 )]
+position = Vector2( 8130, -464 )
+
 [node name="ColorRect2" type="ColorRect" parent="."]
 margin_left = -855.0
 margin_top = 928.0
-margin_right = 5556.0
+margin_right = 10189.0
 margin_bottom = 1405.0
 color = Color( 0.992157, 0.266667, 0.0862745, 1 )
 
@@ -193,12 +313,12 @@ position = Vector2( 4138, 1468 )
 script = ExtResource( 12 )
 
 [node name="Area2D" parent="." instance=ExtResource( 10 )]
-position = Vector2( 1445, 929 )
+position = Vector2( 4671, 929 )
 
 [node name="paredd2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="paredd2"]
-position = Vector2( 5273.5, -264.5 )
+position = Vector2( 9700, -305 )
 shape = SubResource( 4 )
 
 [node name="paredd" type="StaticBody2D" parent="."]
@@ -207,16 +327,21 @@ shape = SubResource( 4 )
 position = Vector2( -248.5, -29 )
 shape = SubResource( 3 )
 
-[node name="musica fondo" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 13 )
-autoplay = true
+[node name="musica fondo" parent="." instance=ExtResource( 13 )]
 
-[node name="coin" type="Node" parent="."]
-
-[node name="pickup" parent="coin" instance=ExtResource( 14 )]
+[node name="Area2D2" parent="." instance=ExtResource( 14 )]
+position = Vector2( 8666, 533 )
+scale = Vector2( 0.173172, 0.162488 )
 
 [connection signal="body_entered" from="Estrelles/detector" to="Personatge" method="_punt_tocat"]
 [connection signal="body_entered" from="Estrelles/detector2" to="Personatge" method="_punt_tocat"]
 [connection signal="body_entered" from="Estrelles/detector3" to="Personatge" method="_punt_tocat"]
 [connection signal="body_entered" from="Estrelles/detector4" to="Personatge" method="_punt_tocat"]
+[connection signal="body_entered" from="Estrelles/detector5" to="Personatge" method="_punt_tocat"]
+[connection signal="body_entered" from="Estrelles/detector6" to="Personatge" method="_punt_tocat"]
+[connection signal="body_entered" from="Estrelles/detector7" to="Personatge" method="_punt_tocat"]
+[connection signal="body_entered" from="Estrelles/detector8" to="Personatge" method="_punt_tocat"]
+[connection signal="body_entered" from="Estrelles/detector9" to="Personatge" method="_punt_tocat"]
+[connection signal="body_entered" from="Estrelles/detector10" to="Personatge" method="_punt_tocat"]
 [connection signal="body_exited" from="Area2D" to="Personatge" method="_on_Area2D_body_exited"]
+[connection signal="body_exited" from="Area2D2" to="Personatge" method="_on_Area2D2_body_exited"]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://dark-country-rock-144-138300.mp3" type="AudioStream" id=1]
+
+[node name="musica fondo" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+volume_db = -15.731
+autoplay = true
